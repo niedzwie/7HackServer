@@ -1,7 +1,42 @@
 
 window.onload = function () {
     // TODO:: Do your initialization job
-	window.logtext = [];	
+    window.logtext = [];
+
+
+    // Get a reference to the local "service"
+    window.msf.local(function(err, service) {
+        if (err) {
+            window.logtext.push('msf.local error: ' + err);
+            return;
+        }
+
+        // Create a reference to a communication "channel"
+        var channel = service.channel('asksepp');
+
+        // Connect to the channel
+        channel.connect(function (err) {
+            if(err) return console.error(err);
+            window.logtext.push('You are connected');
+        });
+
+        // Add a message listener. This is where you will receive messages from mobile devices
+        channel.on('fireMissile', function(msg, from){
+            window.logtext.push(from.attributes.name + ' says, ' + msg);
+        });
+     
+        // Add a listener for when another client connects, such as a mobile device
+        channel.on('clientConnect', function(client){
+            // Send the new client a message
+            channel.publish('say', 'Hello '+client.attributes.name, client.id);
+        });
+    });
+
+
+
+
+
+    	
 
     // add eventListener for tizenhwkey
     document.addEventListener('tizenhwkey', function(e) {
@@ -18,6 +53,7 @@ window.onload = function () {
     		debug();
     	}
     });*/
+document.addEventListener( 'keyup', debug );
 document.addEventListener( 'keydown', setFocusElement );
 
     // Sample code
