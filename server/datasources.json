@@ -1,0 +1,43 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "geo": {
+    "name": "geo",
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://maps.googleapis.com/maps/api/geocode/{format=json}",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "address": "{street},{city},{zipcode}",
+            "sensor": "{sensor=false}"
+          },
+          "responsePath": "$.results[0].geometry.location"
+        },
+        "functions": {
+          "geocode": [
+            "street",
+            "city",
+            "zipcode"
+          ]
+        }
+      }
+    ]
+  },
+  "7HackDB": {
+    "host": "us-cdbr-iron-east-03.cleardb.net",
+    "port": 3306,
+    "database": "ad_7945a705fdf30ec",
+    "password": "f778cb91",
+    "name": "7HackDB",
+    "connector": "mysql",
+    "user": "b0565c63f7c777"
+  }
+}

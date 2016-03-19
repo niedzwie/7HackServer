@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 1024M
+  instances: 1
+  domain: eu-gb.mybluemix.net
+  name: 7HackServer
+  host: 7HackServer
+  disk_quota: 1024M
+  services:
+  - 7HackDB
