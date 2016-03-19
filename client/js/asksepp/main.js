@@ -12,12 +12,13 @@ window.onload = function () {
 	}
     });
     
-    document.addEventListener('keydown', function(e) {
+    /*document.addEventListener('keydown', function(e) {
     	// Down Arrow
     	if(e.keyCode == 40) {
     		debug();
     	}
-    });
+    });*/
+document.addEventListener( 'keydown', setFocusElement );
 
     // Sample code
     //var url = 'http://vod-level3-psd-progressive.p7s1digital.de/notice/new/not_available_de_640x360.mp4?token=01~~~31343538333936363930~3836343030~0-562304853786eb86d47478dde&ts=1458396690&access_token=s2s_7hack&video=';
