@@ -1,11 +1,7 @@
-window.logtext = array();
-
 
 window.onload = function () {
     // TODO:: Do your initialization job
-
-	
-	
+	window.logtext = [];	
 
     // add eventListener for tizenhwkey
     document.addEventListener('tizenhwkey', function(e) {
@@ -18,9 +14,9 @@ window.onload = function () {
     
     document.addEventListener('keydown', function(e) {
     	// Down Arrow
-    	if(e.keyCode == 40)
+    	if(e.keyCode == 40) {
     		debug();
-        break;
+    	}
     });
 
     // Sample code
@@ -58,7 +54,7 @@ function listError() {
 	//webapis.avplay.prepare();
     //webapis.avplay.play();
     //console.log('play prepare failed');
-    window.logtext.push('play prepare failed');
+	window.logtext.push('play prepare failed');
 }
 
 function error() {
