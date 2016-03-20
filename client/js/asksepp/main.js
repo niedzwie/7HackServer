@@ -7,7 +7,7 @@ window.onload = function () {
     // Get a reference to the local "service"
     window.msf.local(function(err, service) {
         if (err) {
-            window.logtext.push('msf.local error: ' + err);
+            console.log('msf.local error: ' + err);
             return;
         }
         console.log('hallo matty');
@@ -17,13 +17,12 @@ window.onload = function () {
         // Connect to the channel
         channel.connect(function (err) {
             if(err) return console.error(err);
-            window.logtext.push('You are connected');
-            console.log('hallo matty connected');
+            console.log('You are connected');
         });
 
         // Add a message listener. This is where you will receive messages from mobile devices
         channel.on('fireMissile', function(msg, from){
-            window.logtext.push(from.attributes.name + ' says, ' + msg);
+            console.log(from.attributes.name + ' says, ' + msg);
         });
      
         // Add a listener for when another client connects, such as a mobile device
