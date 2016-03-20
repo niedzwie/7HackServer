@@ -10,7 +10,7 @@ window.onload = function () {
             window.logtext.push('msf.local error: ' + err);
             return;
         }
-
+        console.log('hallo matty');
         // Create a reference to a communication "channel"
         var channel = service.channel('asksepp');
 
@@ -18,6 +18,7 @@ window.onload = function () {
         channel.connect(function (err) {
             if(err) return console.error(err);
             window.logtext.push('You are connected');
+            console.log('hallo matty connected');
         });
 
         // Add a message listener. This is where you will receive messages from mobile devices
