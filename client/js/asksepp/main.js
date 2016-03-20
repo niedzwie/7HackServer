@@ -25,6 +25,7 @@ window.onload = function () {
             console.log(from.attributes.name + ' says, ' + msg);
             if(msg == 'testText') {
                 console.log('testText request incoming');
+                channel.publish('getTime', 'DumyTime xx.xx.xx');
             }
         });
      
