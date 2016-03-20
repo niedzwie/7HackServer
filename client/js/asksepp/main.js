@@ -23,6 +23,9 @@ window.onload = function () {
         // Add a message listener. This is where you will receive messages from mobile devices
         channel.on('fireMissile', function(msg, from){
             console.log(from.attributes.name + ' says, ' + msg);
+            if(msg == 'testText') {
+                console.log('testText request incoming');
+            }
         });
      
         // Add a listener for when another client connects, such as a mobile device
