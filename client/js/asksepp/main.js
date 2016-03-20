@@ -10,7 +10,6 @@ window.onload = function () {
             console.log('msf.local error: ' + err);
             return;
         }
-        console.log('hallo matty');
         // Create a reference to a communication "channel"
         var channel = service.channel('asksepp');
 
@@ -27,6 +26,7 @@ window.onload = function () {
      
         // Add a listener for when another client connects, such as a mobile device
         channel.on('clientConnect', function(client){
+            console.log('client connected');
             // Send the new client a message
             channel.publish('getTime', 'Hello getTime '+client.attributes.name, client.id);
         });
