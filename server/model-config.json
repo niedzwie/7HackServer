@@ -6,36 +6,37 @@
     ]
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "7HackDB",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "7HackDB",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "7HackDB",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "7HackDB",
     "public": false
   },
-  "Car": {
+  "Serie": {
     "dataSource": "7HackDB",
+    "public": true,
     "$promise": {},
     "$resolved": true
   },
-  "Customer": {
-    "dataSource": "db"
+  "Zeitangabe": {
+    "dataSource": "7HackDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   },
-  "Inventory": {
-    "dataSource": "db"
-  },
-  "Location": {
-    "dataSource": "db"
-  },
-  "Note": {
-    "dataSource": "db"
+  "Kleidung": {
+    "dataSource": "7HackDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }

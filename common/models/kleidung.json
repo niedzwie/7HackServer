@@ -1,0 +1,41 @@
+{
+  "name": "Kleidung",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Position": {
+      "type": "string",
+      "required": true
+    },
+    "Id": {
+      "type": "string",
+      "id": true
+    },
+    "Typ": {
+      "type": "string",
+      "required": true
+    },
+    "Farbe": {
+      "type": "string",
+      "required": true
+    },
+    "Url": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "zeitangabes": {
+      "type": "hasAndBelongsToMany",
+      "model": "Zeitangabe",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Zeitangabe",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true
+    },
+    "timeInSeconds": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "kleidungs": {
+      "type": "hasAndBelongsToMany",
+      "model": "Kleidung",
+      "foreignKey": ""
+    },
+    "series": {
+      "type": "hasAndBelongsToMany",
+      "model": "Serie",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
