@@ -28,7 +28,7 @@ window.onload = function () {
         // Add a listener for when another client connects, such as a mobile device
         channel.on('clientConnect', function(client){
             // Send the new client a message
-            channel.publish('say', 'Hello '+client.attributes.name, client.id);
+            channel.publish('getTime', 'Hello getTime '+client.attributes.name, client.id);
         });
     });
 
