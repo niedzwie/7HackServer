@@ -12,6 +12,7 @@ window.onload = function () {
         }
         // Create a reference to a communication "channel"
         var channel = service.channel('asksepp');
+        window.channel = channel;
 
         // Connect to the channel
         channel.connect(function (err) {
@@ -27,8 +28,6 @@ window.onload = function () {
         // Add a listener for when another client connects, such as a mobile device
         channel.on('clientConnect', function(client){
             console.log('client connected');
-            // Send the new client a message
-            channel.publish('getTime', 'Hello getTime '+client.attributes.name, client.id);
         });
     });
 
